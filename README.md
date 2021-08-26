@@ -10,7 +10,11 @@ TODO: fix typescript errors
 
 - `renderCard()`: Using [react-native-elements]() Card, I created the basic card element and passed the values using `const data = []`. This can be modified by adding an API to it so that it is more useful.
 
-- `renderNoMoreCards()`: Here 
+- `renderNoMoreCards()`: Here I handle what happens when the last card is swiped. You could add a button here and then using a function get more data from your API.
+
+## Deck.tsx
+
+
 
 
 # Demo
