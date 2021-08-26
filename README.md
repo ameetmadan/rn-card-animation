@@ -14,4 +14,4 @@ TODO: fix typescript errors
 
 
 # Demo
-()
+![Demo](https://github.com/ameetmadan/rn-card-animation/blob/master/demo.gif)
