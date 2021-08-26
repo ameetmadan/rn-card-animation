@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Card } from 'react-native-elements';
-// import Ball from './src/Ball'
-import Deck from './src/Deck'
+import Deck from './Deck'
 
 
 const data = [
@@ -34,14 +33,24 @@ const data = [
 ];
 
 export default class App extends React.Component {
-  renderCard(item: any) {
+  renderCard(item) {
     return (
-      <Card key={item.id}>
-        <Card.Image source={{ uri: item.uri }} />
+      <Card
+        key={item.id}>
+        <Card.Image source={{ uri: item.uri }} style={{ marginBottom: 10 }} />
         <Card.Title>{item.text}</Card.Title>
       </Card>
     )
   };
+
+  renderNoMoreCards() {
+    return (
+      <Card>
+        <Card.Title style={{ padding: 10 }}> Nothing left here!</Card.Title>
+      </Card>
+    )
+
+  }
   render() {
     return (
       <View style={styles.container} >
@@ -49,6 +58,9 @@ export default class App extends React.Component {
         <Deck
           data={data}
           renderCard={this.renderCard}
+          renderNoMoreCards={this.renderNoMoreCards}
+          onSwipeLeft={() => { console.log('swiped left') }}
+          onSwipeRight={() => { console.log('swiped right') }}
         />
         <StatusBar style="auto" />
       </View>
@@ -58,9 +70,10 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 35,
+    paddingLeft: 15,
+    paddingRight: 15,
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
   },
 });
