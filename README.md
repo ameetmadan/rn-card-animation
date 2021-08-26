@@ -14,7 +14,18 @@ TODO: fix typescript errors
 
 ## Deck.tsx
 
+- `SCREEN_WIDTH` = Using the Dimensions library from React Native this is set dynamically for all devices
+- `SWIPE_THRESHOLD` = This is to decide when we want to recognize a swipe right as such, change this to a higher number to let the user move more than a quarter of the card
+- `SWIPE_OUT_DURATION` = How fast we want our animation to be
 
+
+- `panResponder`: This part od the code has the sub-elements
+  - `onStartShouldSetPanResponder`
+  - `onPanResponderMove`
+  - `onPanResponderRelease`
+
+
+- `UIManager.setLayoutAnimationEnabledExperimental`
 
 
 # Demo
